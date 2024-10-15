@@ -64,7 +64,7 @@ The user sessions depend on cookies. In the [session] section of config file, yo
 To switch where to store, you can set `storage` to coresponding config value in the above table. For Redis, you also need to set `redis_conn` to your connection information (For example `redis://user123:password456@127.0.0.1:6379/0`) of your redis server.
 
 ## Benchmark
-I'm not sure how to benchmark a reverse proxy, so I simply benchmark authentication only mode. See the results.
+I'm not sure how to benchmark a reverse proxy, so I simply benchmark authentication only mode. [See the results](https://github.com/phoxwupsh/watchdawg/blob/main/benchmark/http-auth-only.md).
 
 ## Planning
 - [ ] More encryption algorithm for htpasswd (like apr1, sha-1)
