@@ -67,7 +67,7 @@ To switch where to store, you can set `storage` to coresponding config value in 
 I'm not sure how to benchmark a reverse proxy, so I simply benchmark authentication only mode. See the results.
 
 ## Planning
-[ ] More encryption algorithm for htpasswd (like apr1, sha-1)
-[ ] More session storage (maybe SQLite)
-[ ] Docker support
-[ ] Graceful shutdown
+- [ ] More encryption algorithm for htpasswd (like apr1, sha-1)
+- [ ] More session storage (maybe SQLite)
+- [ ] Docker support
+- [ ] Graceful shutdown
