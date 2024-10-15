@@ -1,0 +1,42 @@
+# The address to listen, usually `127.0.0.1` or `localhost`
+listen_address = "127.0.0.1"
+
+# The port to listen, this should be exposed
+listen_port = 8080
+
+# The path to your htpasswd file, the encryption algorithm should be `bcrypt`
+htpasswd_path = "htpasswd"
+
+# When used as an authentication only server for nginx, this is the returned header name that contains cookie 
+auth_return_header_name = "X-Auth-Token"
+
+# Enable to debug mode or not
+debug = false
+
+[reverse_proxy]
+# Enable or disable the reverse proxy feature. 
+# If disabled, the server will only be used for authentication, which response 200 when authentication pass and 401 when not pass.
+# If enabled, requests will be forwarded to `proxy_address` after authentication pass.
+enabled = false
+# The address to foward, you should enable HTTPS below if this address use HTTPS
+proxy_address = "example.com"
+
+[session]
+# The cookie name used to store the session ID 
+# Please ensure it contains only ASCII characters and does not include characters like `=`, `;`, `,`.
+cookie_name = "session_id"
+# The duration to expire
+session_expire = 86400
+# Where to store the session, can be `memory` to store in the memory or `redis` to store in the Redis database
+storage = "memory"
+# The address to connect to your redis database
+redis_conn = "redis://127.0.0.1:6379/0"
+
+[https]
+# Enable or disable HTTPS. 
+# It usually needs to be enabled only when using the reverse proxy feature to forward requests to a address with HTTPS.
+enabled = false
+# Path to your SSL certificate
+cert = "127.0.0.1-cert.pem"
+# Path to your SSL private key
+key = "127.0.0.1-key.pem"

@@ -1,0 +1,37 @@
+[package]
+name = "watchdawg"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+argh = "0.1.12"
+async-trait = "0.1.80"
+base64 = "0.22.1"
+bcrypt = "0.15.1"
+concat-string = "1.0.1"
+dashmap = "5.5.3"
+http-body-util = "0.1.1"
+hyper = { version = "1.4.1", features = ["client", "server", "http1", "http2"] }
+hyper-rustls = { version = "0.27.3", features = ["http2"] }
+hyper-util = { version = "0.1.9", features = ["full"] }
+r2d2 = "0.8.10"
+redis = "0.27.4"
+rustls = "0.23.14"
+rustls-pemfile = "2.2.0"
+rustls-pki-types = "1.9.0"
+serde = { version = "1.0.202", features = ["derive"] }
+thiserror = "1.0.64"
+tokio = { version = "1.37.0", features = ["rt-multi-thread", "macros", "net"] }
+tokio-rustls = "0.26.0"
+toml = "0.8.13"
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+uuid = { version = "1.8.0", features = ["v4", "fast-rng"] }
+webpki-roots = "0.26.6"
+
+[profile.release]
+lto = true
+strip = true
+panic = "abort"
